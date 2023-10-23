@@ -19,6 +19,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
 
+gem "tailwindcss-rails", "~> 2.0"
 # Use Sass to process CSS
 gem 'sassc-rails'
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
