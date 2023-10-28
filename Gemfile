@@ -19,7 +19,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
 
-gem "tailwindcss-rails", "~> 2.0"
+gem 'tailwindcss-rails', '~> 2.0'
 # Use Sass to process CSS
 gem 'sassc-rails'
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
@@ -39,8 +39,8 @@ gem 'sprockets-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap'
 
-gem "sentry-ruby"
-gem "sentry-rails"
+gem 'sentry-rails'
+gem 'sentry-ruby'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
