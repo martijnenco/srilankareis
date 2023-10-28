@@ -2,5 +2,10 @@
 
 Rails.application.routes.draw do
   root 'landing#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  namespace :jurisdiction do
+    get :privacy_policy
+    get :terms_of_service
+    get :disclaimer
+  end
 end
