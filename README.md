@@ -5,7 +5,7 @@
 ```bash
 sudo apt-get update -y
 sudo apt-get install -y pkg-config rbenv
-rbenv install 3.2.0 # or later
+rbenv install "$(cat .ruby-version)"
 bundle install
 bundle exec rails db:setup
 ./bin/dev
