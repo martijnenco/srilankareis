@@ -12,4 +12,7 @@ Sentry.init do |config|
   config.traces_sampler = lambda do |_context|
     true
   end
+
+  # Dont do anything in test or development
+  config.enabled_environments = %w[production staging]
 end
