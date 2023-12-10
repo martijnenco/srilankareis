@@ -1,0 +1,21 @@
+nl-NL:
+  languages:
+    'en-GB': 'English'
+    'nl-NL': 'Nederlands'
+  routes:
+    disclaimer: "disclaimer"
+    jurisdiction: "juridisch"
+    privacy_policy: "privacy-beleid"
+    terms_of_service: "algemene-voorwaarden"
+  layouts:
+    application:
+      close-sidebar: "Sluit zijbalk"
+      disclaimer: "Disclaimer"
+      jurisdiction: "Juridisch"
+      logo-alt: "Reizen naar Sri Lanka makkelijk gemaakt."
+      open-sidebar: "Open zijbalk"
+      privacy_policy: "Privacy beleid"
+      terms_of_service: "Algemene voorwaarden"
+    locale_toggle:
+      change-language: "Verander taal"
+      language: "Taal"

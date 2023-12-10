@@ -14,7 +14,7 @@ module Srilankareis
     config.load_defaults 7.1
 
     config.i18n.default_locale = :'nl-NL'
-    config.i18n.available_locales = %i[nl-NL nl-BE]
+    config.i18n.available_locales = %i[nl-NL en-GB]
 
     # Configuration for the application, engines, and railties goes here.
     #

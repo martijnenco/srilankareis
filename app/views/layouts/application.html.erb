@@ -9,6 +9,9 @@
 
 		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= javascript_importmap_tags %>
+
+		<%= turbo_refreshes_with method: :morph, scroll: :preserve %>
+		<%= content_for :head %>
 	</head>
 
 	<body>
@@ -19,18 +22,20 @@
 				<div class="w-full navbar bg-base-300">
 					<div class="flex mx-auto w-full container">
 						<div class="flex-none lg:hidden">
-							<label for="main-navigation-drawer" aria-label="open sidebar" class="btn btn-square btn-ghost">
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+							<label for="main-navigation-drawer" aria-label="<%= t('.open-sidebar') %>" class="btn btn-square btn-ghost">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+								</svg>
 							</label>
 						</div> 
 						<div class="flex-1">
-              <%= link_to image_tag(asset_path('svg/logo-horizontal-full.svg'), size: 300, alt: "Reizen naar Sri Lanka makkelijk gemaakt."), root_path %>
+              <%= link_to image_tag(asset_path('svg/logo-horizontal-full.svg'), size: 300, alt: t('.logo-alt')), root_path %>
             </div>
 						<div class="flex-none hidden lg:block">
-							<ul class="menu menu-horizontal">
+							<ul class="menu menu-horizontal px-0">
 								<!-- Navbar menu content here -->
-								<li><a>Navbar Item 1</a></li>
-								<li><a>Navbar Item 2</a></li>
+								<div class="hidden flex-none items-center lg:block"><a href="/components" class="btn btn-ghost drawer-button font-normal">Components</a></div>
+								<%= render 'layouts/locale_toggle' %>
 							</ul>
 						</div>
 					</div>
@@ -44,25 +49,25 @@
 				<footer class="footer cotainer bg-neutral text-neutral-content static bottom-0">
 					<div class="flex mx-auto w-full container">
 						<aside class="flex-1">
-              <%= link_to image_tag(asset_path('svg/logo-horizontal-full.svg'), size: '500', alt: "Reizen naar Sri Lanka makkelijk gemaakt.", class: "m-5"), root_path %>
+              <%= link_to image_tag(asset_path('svg/logo-horizontal-full.svg'), size: '500', alt: t('.logo-alt'), class: ""), root_path %>
             </aside> 
             <nav class="flex-none">
-              <header class="footer-title">Jurisdictie</header> 
+              <header class="footer-title"><%= t('.jurisdiction') %></header>
               <div class="grid gap-2">
-                <%= link_to "Algemene voorwaarden", jurisdiction_terms_of_service_path %>
-                <%= link_to "Privacybeleid", jurisdiction_privacy_policy_path %>
-                <%= link_to "Disclaimer", jurisdiction_disclaimer_path %>
+                <%= link_to t('.terms_of_service'), jurisdiction_terms_of_service_path %>
+                <%= link_to t('.privacy_policy'), jurisdiction_privacy_policy_path %>
+                <%= link_to t('.disclaimer'), jurisdiction_disclaimer_path %>
               </div>
             </nav>
           </div> 
         </footer>
       </div> 
 	    <div class="drawer-side">
-		    <label for="main-navigation-drawer" aria-label="close sidebar" class="drawer-overlay"></label> 
+		    <label for="main-navigation-drawer" aria-label="<%= t('.close-sidebar') %>" class="drawer-overlay"></label> 
         <ul class="menu p-4 w-80 min-h-full bg-base-200">
           <!-- Sidebar content here -->
-          <li><a>Sidebar Item 1</a></li>
-          <li><a>Sidebar Item 2</a></li>
+					<div class="hidden flex-none items-center lg:block"><a href="/components" class="btn btn-ghost drawer-button font-normal">Components</a></div>
+					<%= render 'layouts/locale_toggle' %>
         </ul>
 	    </div>
     </div>

@@ -3,9 +3,11 @@
 Rails.application.routes.draw do
   root 'landing#index'
 
-  namespace :jurisdiction do
-    get :privacy_policy
-    get :terms_of_service
-    get :disclaimer
+  localized do
+    namespace :jurisdiction do
+      get :privacy_policy
+      get :terms_of_service
+      get :disclaimer
+    end
   end
 end

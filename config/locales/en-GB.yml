@@ -23,11 +23,30 @@
 #
 # Instead, surround them with single quotes.
 #
-# en:
+# en-GB:
 #   'true': 'foo'
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+en-GB:
+  languages:
+    'en-GB': 'English'
+    'nl-NL': 'Nederlands'
+  routes:
+    jurisdiction: "legal"
+    terms_of_service: "terms-of-service"
+    privacy_policy: "privacy-policy"
+    disclaimer: "disclaimer"
+  layouts:
+    application:
+      close-sidebar: "Close sidebar"
+      disclaimer: "Disclaimer"
+      jurisdiction: "Legal"
+      logo-alt: "Travel to Sri Lanka made easy."
+      open-sidebar: "Open sidebar"
+      privacy_policy: "Privacy policy"
+      terms_of_service: "Terms of service"
+    locale_toggle:
+      change-language: "Change language"
+      language: "Language" 

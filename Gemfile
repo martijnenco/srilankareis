@@ -23,7 +23,8 @@ gem 'tailwindcss-rails', '~> 2.0'
 # Use Sass to process CSS
 gem 'sassc-rails'
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'turbo-rails'
+# gem 'turbo-rails'
+gem 'turbo-rails', '~> 2.0.0.pre.beta'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -75,3 +76,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+gem 'route_translator', '~> 14.1'
