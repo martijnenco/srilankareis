@@ -29,3 +29,13 @@
   padding: 0 !important;
   max-width: 100% !important;
 }
+
+trix-editor {
+  background-color: var(--fallback-bc, oklch(var(--bc)/1));
+  color: var(--fallback-bc, oklch(var(--b1)/1));
+}
+trix-toolbar {
+  .trix-button-group{
+    background-color: var(--fallback-bc, oklch(var(--bc)/1));
+  }
+}

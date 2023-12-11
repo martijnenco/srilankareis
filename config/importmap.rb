@@ -10,3 +10,7 @@ pin '@hotwired/turbo-rails', to: 'turbo.min.js', preload: true
 
 # DaisyUI
 pin 'daisyui', to: 'daisyui'
+
+# Trix
+pin '@rails/actiontext', to: 'actiontext.js', preload: true
+pin 'trix', to: 'trix.js', preload: true
