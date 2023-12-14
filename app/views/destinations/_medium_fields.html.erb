@@ -1,0 +1,7 @@
+<div class="my-5">
+  <%= f.label :file %>
+  <%= f.text_field :title %>
+  <%= f.text_field :alt_text %>
+  <%= f.file_field :file, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <%= link_to_remove_association "Remove medium", f %>
+</div>

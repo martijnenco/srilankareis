@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= I18n.locale %>" data-theme="mytheme">
+<html lang="<%= I18n.locale %>" data-theme="dark">
 	<head>
 		<title><%= @pagetitle %></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -34,8 +34,12 @@
 						<div class="flex-none hidden lg:block">
 							<ul class="menu menu-horizontal px-0">
 								<!-- Navbar menu content here -->
-								<div class="hidden flex-none items-center lg:block"><a href="/components" class="btn btn-ghost drawer-button font-normal">Components</a></div>
-								<%= render 'layouts/locale_toggle' %>
+								<div class="hidden flex-none items-center lg:block">
+									<%= link_to Destination.model_name.human(count: 2), destinations_path, class: "btn btn-ghost drawer-button font-normal" %>
+								</div>
+								<div class="hidden flex-none items-center lg:block">
+									<%= render 'layouts/locale_toggle' %>
+								</div>
 							</ul>
 						</div>
 					</div>
@@ -66,7 +70,9 @@
 		    <label for="main-navigation-drawer" aria-label="<%= t('.close-sidebar') %>" class="drawer-overlay"></label> 
         <ul class="menu p-4 w-80 min-h-full bg-base-200">
           <!-- Sidebar content here -->
-					<div class="hidden flex-none items-center lg:block"><a href="/components" class="btn btn-ghost drawer-button font-normal">Components</a></div>
+					<div class="flex-none items-center">
+						<%= link_to Destination.model_name.human(count: 2), destinations_path, class: "btn btn-ghost drawer-button font-normal" %>
+					</div>
 					<%= render 'layouts/locale_toggle' %>
         </ul>
 	    </div>

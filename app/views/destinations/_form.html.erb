@@ -1,0 +1,37 @@
+<%= simple_form_for(destination, class: "contents") do |form| %>
+  <% if destination.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(destination.errors.count, "error") %> prohibited this destination from being saved:</h2>
+
+      <ul>
+        <% destination.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :description %>
+    <%= form.rich_text_area :description, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5" data-controller="nested-rondo">
+  <%# Create nested form for media files, and user can add and delete as many to this has_many relation %>
+    <%= form.simple_fields_for :media, destination.media do |media_form| %>
+      <div data-nested-rondo-target="fieldContain">
+            <%= render("medium_fields", f: media_form) %>
+      </div>
+    <% end %>
+    <p><%= link_to_add_association "Add medium", form, :media %></p>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

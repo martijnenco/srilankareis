@@ -7,6 +7,13 @@ nl-NL:
     jurisdiction: "juridisch"
     privacy_policy: "privacy-beleid"
     terms_of_service: "algemene-voorwaarden"
+  controller:
+    created_successfully: "%{resource} succesvol aangemaakt."
+    created_unsuccessfully: "%{resource} kon niet aangemaakt worden."
+    updated_successfully: "%{resource} succesvol bijgewerkt."
+    updated_unsuccessfully: "%{resource} kon niet bijgewerkt worden."
+    destroyed_successfully: "%{resource} succesvol verwijderd."
+    destroyed_unsuccessfully: "%{resource} kon niet verwijderd worden."
   layouts:
     application:
       close-sidebar: "Sluit zijbalk"

@@ -38,6 +38,13 @@ en-GB:
     terms_of_service: "terms-of-service"
     privacy_policy: "privacy-policy"
     disclaimer: "disclaimer"
+  controller:
+    created_successfully: "%{resource} created successfully."
+    created_unsuccessfully: "%{resource} could not be created."
+    updated_successfully: "%{resource} updated successfully."
+    updated_unsuccessfully: "%{resource} could not be updated."
+    destroyed_successfully: "%{resource} destroyed successfully."
+    destroyed_unsuccessfully: "%{resource} could not be destroyed."
   layouts:
     application:
       close-sidebar: "Close sidebar"

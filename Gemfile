@@ -17,7 +17,10 @@ gem 'sass-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder'
+# gem 'jbuilder'
+
+
+gem "rondo_form", "~> 0.2.3"
 
 gem 'tailwindcss-rails', '~> 2.0'
 # Use Sass to process CSS
