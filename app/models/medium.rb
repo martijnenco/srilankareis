@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Medium < ApplicationRecord
   belongs_to :attachable, polymorphic: true, touch: true
 
