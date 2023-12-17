@@ -4,7 +4,7 @@
 * Ruby version
 ```bash
 sudo apt-get update -y
-sudo apt-get install -y pkg-config rbenv
+sudo apt-get install -y pkg-config rbenv libvips libvips-dev libvips-tools
 rbenv install "$(cat .ruby-version)"
 bundle install
 bundle exec rails db:setup

@@ -11,29 +11,14 @@ gem 'rails'
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma'
-# Use SCSS for stylesheets
-gem 'importmap-rails'
-gem 'sass-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder'
-
-
-gem "rondo_form", "~> 0.2.3"
-
-gem 'tailwindcss-rails', '~> 2.0'
-# Use Sass to process CSS
-gem 'sassc-rails'
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-# gem 'turbo-rails'
-gem 'turbo-rails', '~> 2.0.0.pre.beta'
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem 'stimulus-rails'
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem 'sprockets-rails'
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis'
+# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+# gem 'turbo-rails'
 # Use Active Model has_secure_password
 # gem 'bcrypt'
 # Use Active Storage variant
@@ -88,8 +73,3 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-gem 'route_translator', '~> 14.1'
