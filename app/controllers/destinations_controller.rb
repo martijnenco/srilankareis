@@ -42,25 +42,21 @@ class DestinationsController < ApplicationController
   end
 
   private
-    def set_destination
-      @destination = Destination.find(params[:id])
-    end
 
-    def destination_params
-      params.require(:destination).permit(
+  def set_destination
+    @destination = Destination.find(params[:id])
+  end
+
+  def destination_params
+    params.require(:destination).permit(
+      :title,
+      :description,
+      media_attributes: [
+        :id,
+        :alt_text,
         :title,
-        :description,
-        media_attributes: [
-          :id,
-          :alt_text,
-          :title,
-          :file,
-          :_destroy,
-          new_media: [
-            :alt_text,
-            :title,
-            :file
-          ]
-        ])
-    end
+        :file,
+        :_destroy,
+      ])
+  end
 end

@@ -206,8 +206,6 @@ GEM
     reline (0.4.1)
       io-console (~> 0.5)
     rexml (3.2.6)
-    rondo_form (0.2.3)
-      railties (>= 6.0)
     route_translator (14.1.0)
       actionpack (>= 6.1, < 7.2)
       activesupport (>= 6.1, < 7.2)
@@ -318,11 +316,9 @@ DEPENDENCIES
   heroicon (~> 1.0)
   image_processing
   importmap-rails
-  jbuilder
   listen
   puma
   rails
-  rondo_form (~> 0.2.3)
   route_translator (~> 14.1)
   rubocop
   rubocop-performance

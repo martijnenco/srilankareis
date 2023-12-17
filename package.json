@@ -8,6 +8,7 @@
     "@rails/ujs": "^6.0.0",
     "daisyui": "^4.4.19",
     "postcss": "^8.4.32",
+    "stimulus-rails-nested-form": "^4.1.0",
     "trix": "^2.0.7",
     "turbolinks": "^5.2.0"
   },
