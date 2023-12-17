@@ -1,7 +1,22 @@
-<div class="my-5">
-  <%= f.label :file %>
-  <%= f.text_field :title %>
-  <%= f.text_field :alt_text %>
-  <%= f.file_field :file, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  <%= link_to_remove_association "Remove medium", f %>
+<div class="nested-form-wrapper" data-new-record="<%= f.object.new_record? %>">
+  <div class="my-5 px-5 border border-gray-200 rounded-md">
+    <%= f.label :file %>
+    <%= f.input :title %>
+    <%= f.input :alt_text %>
+    <% if f.object.file.attached? %>
+      <div class="flex items-center">
+        <span class="text-gray-500 mr-2">Current file:</span>
+        <%= f.object.file.filename %>
+        <%= image_tag f.object.file.variant(resize_to_limit: [100, 100]) %>
+        <%= f.file_field :file, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full mx-auto" %>
+      </div>
+    <% else %>
+      <div class="flex items-center">
+        <%= f.file_field :file, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full mx-auto" %>
+      </div>
+    <% end %>
+
+    <button type="button" data-action="nested-form#remove" class="ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium">Remove todo</button>
+    <%= f.hidden_field :_destroy %>
+  </div>
 </div>

@@ -36,12 +36,24 @@ gem 'sprockets-rails'
 # gem 'redis'
 # Use Active Model has_secure_password
 # gem 'bcrypt'
-
 # Use Active Storage variant
-# gem 'image_processing'
+gem 'image_processing'
 
-# Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap'
+# I18n
+gem 'route_translator', '~> 14.1'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+# Frontend
+gem "heroicon", "~> 1.0"
+gem "simple_form", "~> 5.3"
+gem "simple_form_tailwind_css", "~> 1.0"
+gem 'importmap-rails'
+gem 'sass-rails'
+gem 'sassc-rails'
+gem 'sprockets-rails'
+gem 'stimulus-rails'
+gem 'tailwindcss-rails', '~> 2.0'
+gem 'turbo-rails', '~> 2.0.0.pre.beta'
 
 gem 'sentry-rails'
 gem 'sentry-ruby'

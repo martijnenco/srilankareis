@@ -2,10 +2,12 @@
 
 module.exports = {
   content: [
-    './public/*.html',
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
-    './app/views/**/*.{erb,haml,html,slim}'
+    './app/views/**/*.{erb,haml,html,slim}',
+    './config/initializers/*.rb',
+    './public/*.html',
+    `${process.env.SIMPLE_FORM_TAILWIND_DIR}/**/*.rb`,
   ],
   theme: {
     extend: {

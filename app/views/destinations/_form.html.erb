@@ -1,4 +1,4 @@
-<%= simple_form_for(destination, class: "contents") do |form| %>
+<%= simple_form_for(destination, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } ) do |form| %>
   <% if destination.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(destination.errors.count, "error") %> prohibited this destination from being saved:</h2>
@@ -11,27 +11,19 @@
     </div>
   <% end %>
 
-  <div class="my-5">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+  <%= form.input :title %>
+  <%= form.rich_text_area :description %>
 
-  <div class="my-5">
-    <%= form.label :description %>
-    <%= form.rich_text_area :description, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+  <%= form.simple_fields_for :media, destination.media.new do |media_form| %>
+    <template data-nested-form-target="media">
+      <%= render("medium_fields", f: media_form) %>
+    </template>
+  <% end %>
+  <%= form.simple_fields_for :media do |media_form| %>
+    <%= render("medium_fields", f: media_form) %>
+  <% end %>
+  <div data-nested-form-target="target"></div>
 
-  <div class="my-5" data-controller="nested-rondo">
-  <%# Create nested form for media files, and user can add and delete as many to this has_many relation %>
-    <%= form.simple_fields_for :media, destination.media do |media_form| %>
-      <div data-nested-rondo-target="fieldContain">
-            <%= render("medium_fields", f: media_form) %>
-      </div>
-    <% end %>
-    <p><%= link_to_add_association "Add medium", form, :media %></p>
-  </div>
-
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
-  </div>
+  <button type="button" data-action="nested-form#add" class="ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium">Add todo</button>
+  <%= form.submit class:"ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 <% end %>
