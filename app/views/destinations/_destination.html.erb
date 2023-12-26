@@ -21,7 +21,7 @@
   </div>
   <div class="card-body basis-full">
     <h2 class="card-title"><%= destination.title %></h2>
-    <p><%= destination.description %></p>
+    <div class="line-clamp-[9]"><%= destination.description %></div>
     <div class="card-actions justify-end">
       <% if action_name != "show" %>
         <%= link_to "Show this destination", destination, class: "btn btn-primary" %>

@@ -14,6 +14,9 @@ module.exports = {
       fontFamily: {
         // sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+      lineClamp: {
+        ...[...Array(20).keys()].reduce((acc, i) => ({ ...acc, [i + 1]: i + 1 }), {}),
+      },
     },
   },
   daisyui: {
