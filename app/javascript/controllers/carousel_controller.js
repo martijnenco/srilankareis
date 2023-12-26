@@ -5,12 +5,7 @@ export default class extends Controller {
   static values = { interval: Number }
 
   connect() {
-    if (this.hasIntervalValue && this.slideTargets.length > 1) {
-      setInterval(
-        this.next.bind(this),
-        this.intervalValue
-      )
-    }
+    this.start()
   }
 
   next() {
@@ -20,6 +15,7 @@ export default class extends Controller {
     } else {
       this.index++
     }
+    this.resetInterval()
     this.scrollToCurrentSlide()
   }
 
@@ -30,6 +26,7 @@ export default class extends Controller {
     } else {
       this.index--
     }
+    this.resetInterval()
     this.scrollToCurrentSlide()
   }
 
@@ -47,5 +44,23 @@ export default class extends Controller {
       left: this.slideTargets[this.index].offsetLeft,
       behavior: "smooth"
     })
+  }
+
+  start() {
+    if (!this.hasIntervalValue && this.slideTargets.length <= 1) return
+
+    this.intervalId = setInterval(
+      this.next.bind(this),
+      this.intervalValue
+    )
+  }
+
+  stop() {
+    clearInterval(this.intervalId)
+  }
+
+  resetInterval() {
+    this.stop()
+    this.start()
   }
 }
