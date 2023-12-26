@@ -1,17 +1,34 @@
-<div id="<%= dom_id destination %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
-    <%= destination.title %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
-    <%= destination.description %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this destination", destination, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Edit this destination", edit_destination_path(destination), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+<div id="<%= dom_id destination %>" class="card lg:card-side bg-base-200 shadow-xl border-s-current p-1 pb-0 my-2">
+  <div class="relative m-0 w-full max-h-96" data-controller="carousel" data-carousel-interval-value="5000">
+      <div class="carousel m-0 w-full h-full" data-carousel-target="carouselContainer">
+      <% destination.media.each do |medium| %>
+        <div class="carousel-item w-full mx-1" data-carousel-target="slide">
+          <%= image_tag medium.file.variant(:card), 
+              class:  "object-cover w-full",
+              alt:    medium.title,
+              width:  Medium.attachment_reflections['file'].named_variants[:card].transformations[:resize_to_fill][0],
+              height: Medium.attachment_reflections['file'].named_variants[:card].transformations[:resize_to_fill][1]
+          %>
+        </div>
+      <% end %>
+    </div>
+    <% if destination.media.count >= 2 %>
+      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+        <a class="btn btn-circle" data-action="click->carousel#previous">❮</a>
+        <a class="btn btn-circle" data-action="click->carousel#next">❯</a>
+      </div>
+    <% end %>
+  </div>
+  <div class="card-body basis-full">
+    <h2 class="card-title"><%= destination.title %></h2>
+    <p><%= destination.description %></p>
+    <div class="card-actions justify-end">
+      <% if action_name != "show" %>
+        <%= link_to "Show this destination", destination, class: "btn btn-primary" %>
+        <%= link_to "Edit this destination", edit_destination_path(destination), class: "btn btn-secondary" %>
+        <%= link_to "Destroy this destination", destination_path(destination), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-accent" %>
+        <hr class="mt-6">
+      <% end %>
+    </div>
+  </div>
 </div>

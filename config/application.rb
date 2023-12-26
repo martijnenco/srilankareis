@@ -16,6 +16,9 @@ module Srilankareis
     config.i18n.default_locale = :'nl-NL'
     config.i18n.available_locales = %i[nl-NL en-GB]
 
+    # Active Storage
+    config.active_storage.web_image_content_types = %w[image/png image/jpeg image/jpg image/webp]
+
     # fixes tailwindcss-rails overwrite
     config.generators.template_engine :erb
 
