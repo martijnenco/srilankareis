@@ -6,10 +6,10 @@
 
     <%= render @destination %>
 
-    <%= link_to "Edit this destination", edit_destination_path(@destination), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this destination", edit_destination_path(@destination), class: "btn btn-primary" %>
     <div class="inline-block ml-2">
-      <%= button_to "Destroy this destination", destination_path(@destination), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+      <%= button_to "Destroy this destination", destination_path(@destination), method: :delete, class: "btn btn-warning" %>
     </div>
-    <%= link_to "Back to destinations", destinations_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Back to destinations", destinations_path, class: "btn btn-secondary" %>
   </div>
 </div>

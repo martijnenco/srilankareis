@@ -1,4 +1,9 @@
 nl-NL:
+  activerecord:
+    models:
+      destination:
+        one: "Bestemming"
+        other: "Bestemmingen"
   languages:
     'en-GB': 'English'
     'nl-NL': 'Nederlands'

@@ -7,7 +7,7 @@
       <div class="flex items-center">
         <span class="text-gray-500 mr-2">Current file:</span>
         <%= f.object.file.filename %>
-        <%= image_tag f.object.file.variant(resize_to_limit: [100, 100]) %>
+        <%= image_tag f.object.file.variant(:thumb) %>
         <%= f.file_field :file, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full mx-auto" %>
       </div>
     <% else %>
@@ -16,7 +16,7 @@
       </div>
     <% end %>
 
-    <button type="button" data-action="nested-form#remove" class="ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium">Remove todo</button>
+    <button type="button" data-action="nested-form#remove" class="ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium">Remove medium</button>
     <%= f.hidden_field :_destroy %>
   </div>
 </div>
