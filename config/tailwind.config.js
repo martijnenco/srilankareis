@@ -24,7 +24,7 @@ module.exports = {
     themes: [
       "corporate", // light theme // first one will be the default theme
       "business", // dark theme
-      {
+      // {
       //   mytheme: {
       //     "base-100":  "#1d232a",
 
@@ -36,15 +36,16 @@ module.exports = {
       //     "success":   "#36d399",
       //     "warning":   "#fbbd23",
       //     "error":     "#f87272",
-        // },
-      },
+      //   },
+      // },
     ],
   },
   plugins: [
     // require('@tailwindcss/forms'),
     // require('@tailwindcss/aspect-ratio'),
-    // require('@tailwindcss/typography'),
+    require('@tailwindcss/typography'),
     // require('@tailwindcss/container-queries'),
     require("daisyui"),
+    
   ]
 }

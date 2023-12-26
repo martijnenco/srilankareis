@@ -4,12 +4,45 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-    <%= render @destination %>
+    <div id="<%= dom_id @destination %>">
+        <h1 class="text-5xl font-bold">
+          <%= @destination.title %>
+        </h1>
 
-    <%= link_to "Edit this destination", edit_destination_path(@destination), class: "btn btn-primary" %>
-    <div class="inline-block ml-2">
-      <%= button_to "Destroy this destination", destination_path(@destination), method: :delete, class: "btn btn-warning" %>
+      <div class="card lg:card-side bg-base-200 shadow-xl border-s-current p-1 my-2">
+        <div class="relative m-0 w-full h-[32rem] " data-controller="carousel" data-carousel-interval-value="5000">
+            <div class="carousel m-0 w-full h-full" data-carousel-target="carouselContainer">
+            <% @destination.media.each do |medium| %>
+              <div class="carousel-item w-full mx-1" data-carousel-target="slide">
+                <%= image_tag medium.file.variant(:large), 
+                    class:  "object-cover w-full",
+                    alt:    medium.title,
+                    width:  Medium.attachment_reflections['file'].named_variants[:large].transformations[:resize_to_fill][0],
+                    height: Medium.attachment_reflections['file'].named_variants[:large].transformations[:resize_to_fill][1]
+                %>
+              </div>
+            <% end %>
+          </div>
+          <% if @destination.media.count >= 2 %>
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a class="btn btn-circle" data-action="click->carousel#previous">❮</a>
+              <a class="btn btn-circle" data-action="click->carousel#next">❯</a>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div id="<%= dom_id @destination %>" class="card lg:card-side bg-base-200 shadow-xl border-s-current p-1 my-5">
+        <div class="card-body basis-full">
+          <div><%= @destination.description %></div>
+        </div>
+      </div>
     </div>
-    <%= link_to "Back to destinations", destinations_path, class: "btn btn-secondary" %>
+
+    <div class="flex">
+      <%= link_to "Edit this destination", edit_destination_path(@destination), class: "btn btn-primary" %>
+      <%= button_to "Destroy this destination", destination_path(@destination), method: :delete, class: "btn btn-warning mx-2" %>
+      <%= link_to "Back to destinations", destinations_path, class: "btn btn-secondary" %>
+    </div>
   </div>
 </div>
