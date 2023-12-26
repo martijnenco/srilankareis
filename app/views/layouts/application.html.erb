@@ -2,11 +2,14 @@
 <html lang="<%= I18n.locale %>" data-theme="corporate">
 	<head>
 		<title><%= @pagetitle %></title>
+		<meta name="description" content="<%= @pagedescription %>">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta charset="utf-8">
+
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
-		<%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
+		<%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= javascript_importmap_tags %>
 

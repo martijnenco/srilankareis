@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 class Medium < ApplicationRecord
-  belongs_to :attachable, polymorphic: true, touch: true
+  extend Mobility
 
-  has_rich_text :description
+  translates :alt_text, :title, plain: true
+  translates :description
+
+  belongs_to :attachable, polymorphic: true, touch: true
 
   has_one_attached :file, dependent: :destroy do |attachable|
     attachable.variant :thumb,  resize_to_limit: [200, 200],   format: :webp, saver: { strip: true }

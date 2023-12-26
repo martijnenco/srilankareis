@@ -8,6 +8,7 @@ require:
 AllCops:
   NewCops: enable
   Exclude:
+    - 'db/schema.rb'
     - 'vendor/**/*'
     - 'spec/fixtures/**/*'
     - 'tmp/**/*'

@@ -25,6 +25,9 @@ gem 'bootsnap'
 gem 'image_processing'
 
 # I18n
+gem 'http_accept_language', '~> 2.1'
+gem 'mobility', '~> 1.2'
+gem 'mobility-actiontext', '~> 1.1'
 gem 'route_translator', '~> 14.1'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
